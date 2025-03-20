@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BMIcalculator</string>
+    <string name="bmi_text">Fill the fields with weight and height to calculate your <b>BODY MASS INDEX (BMI)</b></string>
+
 </resources>
