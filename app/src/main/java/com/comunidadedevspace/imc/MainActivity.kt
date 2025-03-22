@@ -7,6 +7,7 @@ import androidx.core.text.HtmlCompat
 import android.text.Html
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -17,8 +18,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        window.statusBarColor = ContextCompat.getColor(this, R.color.secondary)
+
         val textView: TextView = findViewById(R.id.tv_BMI)
-        textView.text = HtmlCompat.fromHtml(getString(R.string.bmi_text), HtmlCompat.FROM_HTML_MODE_LEGACY)
+        textView.text =
+            HtmlCompat.fromHtml(getString(R.string.bmi_text), HtmlCompat.FROM_HTML_MODE_LEGACY)
         val edtWeight = findViewById<TextInputEditText>(R.id.edt_weight)
         val edtHeight = findViewById<TextInputEditText>(R.id.edt_height)
         val btnCalculate = findViewById<Button>(R.id.btn_calculate)
@@ -27,11 +31,11 @@ class MainActivity : AppCompatActivity() {
             val WeightStr: String = edtWeight.text.toString()
             val HeightStr: String = edtHeight.text.toString()
 
-            if (WeightStr ==""|| HeightStr == ""){
+            if (WeightStr == "" || HeightStr == "") {
                 Snackbar
                     .make(
-                    edtWeight,
-                    "Fill in all the fields",
+                        edtWeight,
+                        "Fill in all the fields",
                         Snackbar.LENGTH_LONG
                     )
                     .show()
@@ -41,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 val heightQ2 = height * height
                 val score = weight / heightQ2
 
-                val intent = Intent( this, ResultActivity::class.java)
+                val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_BMI_RESULT, score)
                 startActivity(intent)
             }
