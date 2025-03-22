@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BMIcalculator</string>
-    <string name="bmi_text">Fill the fields with weight and height to calculate your <b>BODY MASS INDEX (BMI)</b></string>
-
+    <string name="app_name" translatable="false">BMIcalculator</string>
+    <string name="bmi_text" translatable="false">Fill the fields with weight and height to calculate your <b>BODY MASS INDEX (BMI)</b></string>
+    <string name="bmi_text_result" translatable="false">Check below the result and classification of your \n<b>BODY MASS INDEX (BMI)</b></string>
 </resources>
