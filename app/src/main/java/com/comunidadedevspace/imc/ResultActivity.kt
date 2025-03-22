@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -14,6 +15,9 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_result)
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.primary_900)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -25,16 +29,12 @@ class ResultActivity : AppCompatActivity() {
         val tvClassification = findViewById<TextView>(R.id.tv_classification)
 
         tvResult.text = result.toString()
-        val classification: String = if (result <= 18.5f){
-            "THIN"
-        } else if (result > 18.5f && result <= 24.9f){
-             "NORMAL"
-        } else if (result > 25f && result <=29.9f){
-             "OVERWEIGHT"
-        } else if (result >30f && result <=39.9f){
-             "OBESITY"
-        }else {
-             "SEVERE OBESITY"
+        val classification: String = when {
+            result <= 18.5f -> "THIN"
+            result in 18.6f..24.9f -> "NORMAL"
+            result in 25f..29.9f -> "OVERWEIGHT"
+            result in 30f..39.9f -> "OBESITY"
+            else -> "SEVERE OBESITY"
         }
 
         tvClassification.text = classification
