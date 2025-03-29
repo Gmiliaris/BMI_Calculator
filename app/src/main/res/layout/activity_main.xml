@@ -74,6 +74,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_bg"
             android:drawableEnd="@drawable/ic_weight01"
+            android:maxLength="6"
             android:hint="Enter your weight e.g.: 70.200 kg"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +96,7 @@
             android:drawableEnd="@drawable/ic_height"
             android:hint="Enter your height e.g.: 1.70 cm"
             android:inputType="numberDecimal"
-            android:maxLength="6" />
+            android:maxLength="4" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
