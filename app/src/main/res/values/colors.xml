@@ -4,4 +4,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary_400">#cd00ea</color>
     <color name="primary_900">#5c00d2</color>
+
+    <color name="primary">#034da2</color>
+    <color name="secondary">#4b89cb</color>
+    <color name="green_light">#8BC34A</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#F44336</color>
+    <color name="background">#a5c4e5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+
 </resources>

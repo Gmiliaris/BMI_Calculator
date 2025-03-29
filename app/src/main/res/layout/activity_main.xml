@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/vg_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradiente_bg"
+        android:background="@drawable/gradiente_new_bg"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="Calculate"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
